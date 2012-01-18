@@ -1,0 +1,27 @@
+{% load compress static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Django + Backbone.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css">
+    {% compress css %}
+    <link rel="stylesheet" href="{% get_static_prefix %}css/style.scss" type="text/x-scss" media="screen" charset="utf-8" />
+    {% endcompress %}
+    {% compress js %}
+    <script src="{% get_static_prefix %}js/jquery-1.7.1.js" type="text/javascript"></script>
+    <script src="{% get_static_prefix %}js/underscore.js" type="text/javascript"></script>
+    <script src="{% get_static_prefix %}js/underscore_mixins.js" type="text/javascript"></script>
+    <script src="{% get_static_prefix %}js/backbone.js" type="text/javascript"></script>
+    {% endcompress %}
+    {% compress js %}
+        <script src="{% get_static_prefix %}views/notes.coffee" type="text/x-coffee"></script>
+        <script src="{% get_static_prefix %}models/models.coffee" type="text/x-coffee"></script>
+        <script src="{% get_static_prefix %}collections/collections.coffee" type="text/x-coffee"></script>
+        <script src="{% get_static_prefix %}apps/notes.coffee" type="text/x-coffee"></script>
+    {% endcompress %}
+  </head>
+  <body>
+    <div id="app">
+    </div>
+  </body>
+</html>
