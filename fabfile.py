@@ -24,5 +24,9 @@ def install_jasmine():
     local("rvm install 1.9.2")
     local("rvm use 1.9.2@milely --create --default")
     local("gem install jasmine")
-    local("gem install jasmine-headless-webkit")
+    #    local("gem install jasmine-headless-webkit")
+    # https://github.com/johnbintz/jasmine-headless-webkit.git
+    # check project out
+    # gem build .gemfile
+    # gem install jasmine-*.gem
 
